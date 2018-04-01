@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - vender/**/*
+
+  Rails:
+    Enabled: true
+
+Metrics/LineLength:
+  Enabled: false
