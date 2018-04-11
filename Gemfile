@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'simple_form'
 # Use dotenv for reading env-variables
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use devise for authentication
@@ -51,6 +52,7 @@ group :development, :test do
   # Adds support for testing
   gem 'guard-rspec'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
   # Use rubocop for code review
   gem 'rubocop', require: false
 end

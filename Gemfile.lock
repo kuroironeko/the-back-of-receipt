@@ -81,6 +81,11 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_bot (4.8.2)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
+      railties (>= 3.0.0)
     ffi (1.9.23)
     formatador (0.2.5)
     globalid (0.4.1)
@@ -221,6 +226,9 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     shellany (0.0.1)
+    simple_form (3.5.1)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -275,6 +283,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   enum_help
+  factory_bot_rails
   guard-rspec
   jbuilder (~> 2.5)
   less-rails
@@ -286,6 +295,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   therubyracer
