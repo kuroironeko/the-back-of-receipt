@@ -48,9 +48,11 @@
         <a class="navbar-brand" href="#">Panda</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Profile", edit_user_path(@user)  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Profile", edit_user_path(@user)  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            <% end %>
           </ul>
         </div>
       </div>
