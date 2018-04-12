@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'simple_form'
+# Dependency of nokogiri for heroku
+gem 'mini_portile2', '~> 2.3.0'
 # Use dotenv for reading env-variables
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use devise for authentication
