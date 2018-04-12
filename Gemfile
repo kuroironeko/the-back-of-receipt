@@ -50,9 +50,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Adds support for testing
+  gem 'factory_bot_rails'
   gem 'guard-rspec'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
   # Use rubocop for code review
   gem 'rubocop', require: false
 end
