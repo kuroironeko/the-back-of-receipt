@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
   let(:valid_attributes) { FactoryBot.attributes_for(:user) }
-
   let(:invalid_attributes) { FactoryBot.attributes_for(:user, :invalid) }
   let(:valid_session) { {} }
+  before do
+      sign_in user
+  end
 
   describe "GET #show" do
     it "returns a success response" do
