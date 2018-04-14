@@ -1,14 +1,17 @@
 FactoryBot.define do
   factory :user do
-    name 'MyName'
-    email 'myemail@myemail.com'
-    password 'MyPassword'
+    sequence(:name) {Faker::Name.name}
+    sequence(:email) {Faker::Internet.email}
+    sequence(:password) {Faker::Internet.password}
 
     trait :modify do
-      email 'modify@myemail.com'
+      sequence(:email) {Faker::Internet.email}
     end
     trait :invalid do
       email nil
+    end
+    after(:create) do |user|
+      3.times {create(:product, user: user)}
     end
   end
 end

@@ -1,8 +1,8 @@
 <h1>Editing Product</h1>
 
-<%= simple_form_for( @product, url: user_product_path, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_form_for( @product, url: user_product_path(user_id: @product.user_id, id: @product.id), html: { class: 'form-horizontal' }) do |f| %>
   <%= render 'form', f: f %>
 <% end %>
 
-<%= link_to 'Show', user_product_path %> |
+<%= link_to 'Show', user_product_path(user_id: @product.user_id, id: @product.id) %> |
 <%= link_to 'Back', user_products_path(user_id: @product.user_id) %>
