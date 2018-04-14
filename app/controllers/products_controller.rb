@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_product, only: %i[show edit update destroy]
 
   # GET /products
   def index
-    @products = Product.all
+    @products = User.find(params[:user_id]).products.all
   end
 
   # GET /products/1
@@ -11,7 +12,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
+    @product = current_user.products.new
   end
 
   # GET /products/1/edit
@@ -19,9 +20,9 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.new(product_params)
     if @product.save
-      redirect_to @product, notice: 'Product was successfully created.' 
+      redirect_to user_product_path(id: @product.id), notice: 'Product was successfully created.' 
     else
       render :new 
     end
@@ -30,7 +31,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
-      redirect_to @product, notice: 'Product was successfully updated.' 
+      redirect_to user_product_path(id: @product.id), notice: 'Product was successfully updated.' 
     else
       render :edit 
     end
@@ -39,7 +40,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy
-    redirect_to products_url, notice: 'Product was successfully destroyed.' 
+    redirect_to user_products_url, notice: 'Product was successfully destroyed.' 
   end
 
   private
