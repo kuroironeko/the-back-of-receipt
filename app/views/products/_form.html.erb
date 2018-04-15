@@ -1,32 +1,17 @@
-<%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<%= f.input :name %>
+<%= f.error_span(:name) %>
+<%= f.input :number %>
+<%= f.error_span(:number) %>
+<%= f.input :state %>
+<%= f.error_span(:state) %>
+<%= f.input :note %>
+<%= f.error_span(:note) %>
+<%= f.input :price %>
+<%= f.error_span(:price) %>
+<%= f.input :due_date %>
+<%= f.error_span(:due_date) %>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= f.button :submit, :class => 'btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              user_products_path(user_id: product.user_id), :class => 'btn btn-default' %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :number %>
-    <%= form.number_field :number, id: :product_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :product_user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

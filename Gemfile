@@ -55,6 +55,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'guard-rspec'
   gem 'rspec-rails'
+  gem 'faker'
   # Use rubocop for code review
   gem 'rubocop', require: false
 end
