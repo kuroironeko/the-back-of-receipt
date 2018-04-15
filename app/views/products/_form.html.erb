@@ -1,6 +1,9 @@
 <%= f.input :name %>
 <%= f.input :number %>
 <%= f.input :state %>
+<%= f.input :price %>
+<%= f.input :due_date, as: :date %>
+<%= f.input :note, as: :text %>
 <div class="form-action">
   <%= f.button :submit, :class => 'btn-primary' %>
 </div>

@@ -15,5 +15,20 @@
   <%= @product.state %>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Due_date:</strong>
+  <%= @product.due_date %>
+</p>
+
+<p>
+  <strong>note:</strong>
+  <%= @product.note %>
+</p>
+
 <%= link_to 'Edit', edit_user_product_path(id: @product.id, user_id: @product.user_id) %> |
 <%= link_to 'Back', user_products_path(user_id: @product.user_id) %>

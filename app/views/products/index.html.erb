@@ -7,6 +7,9 @@
       <th>Name</th>
       <th>Number</th>
       <th>State</th>
+      <th>Price</th>
+      <th>Due_date</th>
+      <th>Note</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +20,9 @@
         <td><%= product.name %></td>
         <td><%= product.number %></td>
         <td><%= product.state %></td>
+        <td><%= product.price %></td>
+        <td><%= product.due_date %></td>
+        <td><%= product.note %></td>
         <td><%= link_to 'Show', user_product_path(id: product.id, user_id: product.user_id) %></td>
         <td><%= link_to 'Edit', edit_user_product_path(product,id: product.id, user_id: product.user_id) %></td>
         <td><%= link_to 'Destroy', user_product_path(id: product.id, user_id: product.user_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>

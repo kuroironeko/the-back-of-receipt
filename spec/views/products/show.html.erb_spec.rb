@@ -6,7 +6,10 @@ RSpec.describe 'products/show', type: :view do
                                   :product,
                                   name: 'MyProduct',
                                   number: '1',
-                                  state: 'request'
+                                  state: 'request',
+                                  due_date: Date.today,
+                                  note: 'pikachu',
+                                  price: '10000'
                                   ) )
   end
 
@@ -15,5 +18,8 @@ RSpec.describe 'products/show', type: :view do
     expect(rendered).to match(/MyProduct/)
     expect(rendered).to match(/1/)
     expect(rendered).to match(/request/)
+    expect(rendered).to match(/1/)
+    expect(rendered).to match(/pikachu/)
+    expect(rendered).to match(/10000/)
   end
 end

@@ -13,6 +13,9 @@ RSpec.describe 'products/edit', type: :view do
 
       assert_select 'input[name=?]', 'product[number]'
       assert_select 'select[name=?]', 'product[state]'
+      assert_select 'select[name=?]', 'product[due_date(1i)]'
+      assert_select 'textarea[name=?]', 'product[note]'
+      assert_select 'input[name=?]', 'product[price]'
     end
   end
 end
