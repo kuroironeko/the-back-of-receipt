@@ -1,8 +1,7 @@
-<h1>Editing Product</h1>
-
-<%= simple_form_for( @product, url: user_product_path(user_id: @product.user_id, id: @product.id), html: { class: 'form-horizontal' }) do |f| %>
-  <%= render 'form', f: f %>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= simple_form_for @product, url: user_product_path(id: @product.id, user_id: @product.user_id), :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render :partial => 'form', locals: { f: f, product: @product } %>
 <% end %>
-
-<%= link_to 'Show', user_product_path(user_id: @product.user_id, id: @product.id) %> |
-<%= link_to 'Back', user_products_path(user_id: @product.user_id) %>

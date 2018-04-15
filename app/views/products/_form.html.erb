@@ -1,11 +1,17 @@
 <%= f.input :name %>
+<%= f.error_span(:name) %>
 <%= f.input :number %>
+<%= f.error_span(:number) %>
 <%= f.input :state %>
+<%= f.error_span(:state) %>
+<%= f.input :note %>
+<%= f.error_span(:note) %>
 <%= f.input :price %>
-<%= f.input :due_date, as: :date %>
-<%= f.input :note, as: :text %>
-<div class="form-action">
-  <%= f.button :submit, :class => 'btn-primary' %>
-</div>
+<%= f.error_span(:price) %>
+<%= f.input :due_date %>
+<%= f.error_span(:due_date) %>
 
+<%= f.button :submit, :class => 'btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              user_products_path(user_id: product.user_id), :class => 'btn btn-default' %>
 
