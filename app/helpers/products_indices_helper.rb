@@ -1,0 +1,2 @@
+module ProductsIndicesHelper
+end
