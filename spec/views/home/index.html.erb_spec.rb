@@ -1,11 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'home/index.html.erb', type: :view do 
-  let(:products_index) {FactoryBot.create(:products_index)}
-
+  before(:each) do
+    assign(:products_indices, [
+      ProductsIndex.create!(
+        :name => "Name0"
+      ),
+      ProductsIndex.create!(
+        :name => "Name1"
+      )
+    ])
+  end
   it 'renders a list of requests' do
     render 
-    assert_select 'tr>td', text: products_index.name, count: 1
+    assert_select 'tr>td', text: "Name0", count: 1
 
   end
 end

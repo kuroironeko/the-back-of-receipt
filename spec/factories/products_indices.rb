@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :products_index do
-    sequence(:name) {Faker::Food.dish}
+    name 'MyFood'
 
     trait :modify do
-    sequence(:name) {Faker::Food.dish}
+    name 'ModifyFood'
     end
     trait :invalid do
       name nil

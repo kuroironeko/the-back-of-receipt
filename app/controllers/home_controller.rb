@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     @products_indices = ProductsIndex.all
+    @products = Product.all
   end
 end
