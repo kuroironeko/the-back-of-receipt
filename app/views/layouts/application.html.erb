@@ -69,9 +69,11 @@
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <% if user_signed_in? %>
+              <li><%= link_to "Profile", edit_user_path(id: current_user.id)  %></li>
+              <li><%= link_to "Requests", user_products_path(user_id: current_user.id)  %></li>
+              <li><%= link_to "Products", products_indices_path  %></li>
+            <% end %>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
