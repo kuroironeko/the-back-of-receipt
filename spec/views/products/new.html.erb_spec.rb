@@ -9,6 +9,7 @@ RSpec.describe 'products/new', type: :view do
     render
 
     assert_select 'form[action=?][method=?]', user_products_path(user_id: @product.user_id), 'post' do
+      assert_select 'select[name=?]', 'product[name]'
       assert_select 'input[name=?]', 'product[number]'
       assert_select 'select[name=?]', 'product[state]'
       assert_select 'select[name=?]', 'product[due_date(1i)]'
