@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   def create
     @product = current_user.products.new(product_params)
     if @product.save
-      redirect_to user_product_path(id: @product.id), notice: 'Product was successfully created.' 
+      redirect_to user_product_path(id: @product.id), notice: t(:success_create)
     else
       render :new 
     end
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
-      redirect_to user_product_path(id: @product.id), notice: 'Product was successfully updated.' 
+      redirect_to user_product_path(id: @product.id), notice: t(:success_update) 
     else
       render :edit 
     end
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy
-    redirect_to user_products_url, notice: 'Product was successfully destroyed.' 
+    redirect_to user_products_url, notice: t(:success_destroy)
   end
 
   private
