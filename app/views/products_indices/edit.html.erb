@@ -1,6 +1,6 @@
-<h1>Editing Products Index</h1>
+<h1><%= t(:edit) %> </h1>
 
 <%= render 'form', products_index: @products_index %>
 
-<%= link_to 'Show', @products_index %> |
-<%= link_to 'Back', products_indices_path %>
+<%= link_to t(:show), @products_index %> |
+<%= link_to t(:back), products_indices_path %>

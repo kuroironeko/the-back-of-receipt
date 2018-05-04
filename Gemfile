@@ -12,6 +12,7 @@ gem 'mini_portile2', '~> 2.3.0'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use devise for authentication
 gem 'devise'
+gem 'devise-i18n'
 # Use enum_help for translation
 gem 'enum_help'
 # Adds support for design

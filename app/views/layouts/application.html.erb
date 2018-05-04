@@ -49,9 +49,9 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
-              <li><%= link_to "Profile", edit_user_path(id: current_user.id)  %></li>
-              <li><%= link_to "Requests", user_products_path(user_id: current_user.id)  %></li>
-              <li><%= link_to "Products", products_indices_path  %></li>
+              <li><%= link_to t(:profile), edit_user_path(id: current_user.id)  %></li>
+              <li><%= link_to t(:requests), user_products_path(user_id: current_user.id)  %></li>
+              <li><%= link_to t(:register_products), products_indices_path  %></li>
             <% end %>
           </ul>
         </div>
@@ -69,11 +69,14 @@
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
+              <% I18n.available_locales.each do |locale| %>
+                <li><%= link_to(t(locale.to_sym), url_for(params.permit.merge(locale: locale))) %></li>
+              <% end %> 
               <% if user_signed_in? %>
-              <li><%= link_to "Profile", edit_user_path(id: current_user.id)  %></li>
-              <li><%= link_to "Requests", user_products_path(user_id: current_user.id)  %></li>
-              <li><%= link_to "Products", products_indices_path  %></li>
-            <% end %>
+              <li><%= link_to t(:profile), edit_user_path(id: current_user.id)  %></li>
+              <li><%= link_to t(:requests), user_products_path(user_id: current_user.id)  %></li>
+              <li><%= link_to t(:register_products), products_indices_path  %></li>
+              <% end %>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
