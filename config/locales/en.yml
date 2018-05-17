@@ -19,14 +19,19 @@ en:
         due_date: "Due Date"
       products_index:
         name: "Name"
+      group:
+        name: "Name"
   success_create: "Create was successfully created."
   success_update: "Update was successfully created."
   success_destroy: "Destroy was successfully created."
+  success_join_request: "Request was successfully send."
+  success_accept: "User was successfully accepted."
   editing_profile: "Editing Profile"
   ja: "日本語"
   en: "English"
   profile: "Profile"
   requests: "The back of receipt"
+  groups: "Groups"
   new_request: "Write on receipt"
   register_new_product: "新しい商品を登録"
   register_products: "Register Products"
@@ -39,7 +44,9 @@ en:
   destroy: "Destroy"
   cancel: "Cancel"
   show: "Show"
-  action: "Action"
+  action: "Actions"
+  join: "Join"
+  accept: "Accept"
   activerecord:
     attributes:
       product:
@@ -51,6 +58,8 @@ en:
         due_date: "Due Date"
         sum_of_request: "Sum of requests"
       products_index:
+        name: "Name"
+      group:
         name: "Name"
 
     errors:

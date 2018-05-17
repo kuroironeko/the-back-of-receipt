@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user.admin = false
     @user.request_group = nil 
     if @user.save
-      redirect_to groups_url, notice: 'user was successfully accepted.'
+      redirect_to groups_url, notice: t(:success_accept)
     else
       render :index
     end
