@@ -1,4 +1,4 @@
-<%= f.input :name, collection: ProductsIndex.all, label_method: :name, value_method: :id, include_blank: false %>
+<%= f.input :name, collection: ProductsIndex.where(group_id: current_user.group_id), label_method: :name, value_method: :id, include_blank: false %>
 <%= f.error_span(:name) %>
 <%= f.input :number %>
 <%= f.error_span(:number) %>
