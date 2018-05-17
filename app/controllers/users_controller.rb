@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_user, except: [:index, :create, :new, :show, :edit, :update]
+  before_action :check_user, only: [ :show, :edit, :update]
   before_action :set_user, only: %i[show edit update accept]
   def index
     @users = User.all.where(group_id: current_user.group_id)
@@ -46,4 +47,9 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) if !(current_user.admin? )
     end
+
+    def check_user
+      redirect_to(root_url) if !(current_user.id == params[:id].to_i )
+    end
+
 end
