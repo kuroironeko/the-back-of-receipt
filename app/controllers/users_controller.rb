@@ -44,6 +44,6 @@ class UsersController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_url) if !current_user.admin? || !(current_user.group_id == params[:id].to_i)
+      redirect_to(root_url) if !(current_user.admin? )
     end
 end
