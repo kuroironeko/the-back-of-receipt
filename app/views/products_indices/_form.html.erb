@@ -1,12 +1,7 @@
+<%= f.input :name %>
+<%= f.error_span(:name) %>
 
-<%= simple_form_for(@products_index) do |f| %>
-  <%= f.error_notification %>
+<%= f.button :submit, :class => 'btn-primary' %>
+<%= link_to t(:cancel, :default => t("helpers.links.cancel")),
+              group_products_indices_path(group_id: current_user.group_id), :class => 'btn btn-default' %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>

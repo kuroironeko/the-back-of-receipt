@@ -3,8 +3,9 @@ Rails.application.routes.draw do
     member do
       patch 'join'
     end
+    resources :products
+    resources :products_indices
   end
-  resources :products_indices
   root to: 'home#index'
   get 'home/index'
 
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
     member do
       patch 'accept'
     end
-    resources :products
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

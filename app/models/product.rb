@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  belongs_to :group 
   validates :number, presence: true
   validates :name, presence: true
   validates :state, presence: true

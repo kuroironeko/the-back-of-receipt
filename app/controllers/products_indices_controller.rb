@@ -25,10 +25,11 @@ class ProductsIndicesController < ApplicationController
   # POST /products_indices.json
   def create
     @products_index = ProductsIndex.new(products_index_params)
+    @products_index.group_id = current_user.group_id 
 
     respond_to do |format|
       if @products_index.save
-        format.html { redirect_to @products_index, notice: t(:success_create) }
+        format.html { redirect_to group_products_index_path(id: @products_index.id), notice: t(:success_create) }
         format.json { render :show, status: :created, location: @products_index }
       else
         format.html { render :new }

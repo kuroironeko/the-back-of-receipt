@@ -1,5 +1,7 @@
 <h1><%= t(:register_new_product) %></h1>
 
-<%= render 'form', products_index: @products_index %>
+<%= simple_form_for @products_index, url: group_products_indices_path(group_id: current_user.group_id), :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render :partial => 'form', locals: { f: f, products_index: @products_index } %>
+<% end %>
 
-<%= link_to t(:back), products_indices_path %>
+<%= link_to t(:back), group_products_indices_path %>
