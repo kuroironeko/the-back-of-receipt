@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
+ 
+  def check_group
+    redirect_to(root_url) if !(current_user.group_id == params[:group_id].to_i)
+  end
 end

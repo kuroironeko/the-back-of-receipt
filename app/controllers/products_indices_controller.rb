@@ -1,10 +1,12 @@
 class ProductsIndicesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_group
   before_action :set_products_index, only: [:show, :edit, :update, :destroy]
 
   # GET /products_indices
   # GET /products_indices.json
   def index
-    @products_indices = ProductsIndex.all
+    @products_indices = ProductsIndex.where(group_id: current_user.group_id)
   end
 
   # GET /products_indices/1
