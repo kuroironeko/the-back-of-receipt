@@ -43,7 +43,7 @@ class ProductsIndicesController < ApplicationController
   def update
     respond_to do |format|
       if @products_index.update(products_index_params)
-        format.html { redirect_to @products_index, notice: t(:success_update) }
+        format.html { redirect_to group_products_index_path(id: @products_index.id), notice: t(:success_update) }
         format.json { render :show, status: :ok, location: @products_index }
       else
         format.html { render :edit }

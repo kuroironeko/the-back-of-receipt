@@ -1,6 +1,8 @@
 <h1><%= t(:edit) %> </h1>
 
-<%= render 'form', products_index: @products_index %>
+<%= simple_form_for @products_index, url: group_products_index_path(group_id: current_user.group_id), :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render :partial => 'form', locals: { f: f, products_index: @products_index } %>
+<% end %>
 
-<%= link_to t(:show), @products_index %> |
-<%= link_to t(:back), products_indices_path %>
+<%= link_to t(:show), group_products_index_path(group_id: @products_index.group_id) %> |
+<%= link_to t(:back), group_products_indices_path(group_id: @products_index.group_id) %>
