@@ -27,6 +27,7 @@ ja:
   success_join_request: "リクエストの送信に成功しました"
   success_accept: "ユーザーの承認に成功しました"
   editing_profile: "プロフィール編集"
+  sign_out: "ログアウト"
   ja: "日本語"
   en: "English"
   profile: "プロフィール"

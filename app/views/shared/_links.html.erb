@@ -4,5 +4,6 @@
   <% unless current_user.group_id == nil %>
     <li><%= link_to t(:requests), group_products_path(group_id: current_user.group_id)  %></li>
     <li><%= link_to t(:register_products), group_products_indices_path(group_id: current_user.group_id)  %></li>
+    <li><%= link_to t(:sign_out),  destroy_user_session_path, method: :delete %></li>
   <% end %>
 <% end %>
