@@ -20,7 +20,7 @@
       <% @user.products.each do |product| %>
         <tr>
           <td><%= link_to product.id, group_product_path(id: product.id, group_id: product.group_id) %></td>
-          <td><%= product.name %></td>
+          <td><%= ProductsIndex.find(product.name).name %></td>
           <td><%= product.number %></td>
           <td><%= product.state_i18n %></td>
           <td><%= product.note %></td>
