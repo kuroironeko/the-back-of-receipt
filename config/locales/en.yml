@@ -27,6 +27,7 @@ en:
   success_join_request: "Request was successfully send."
   success_accept: "User was successfully accepted."
   editing_profile: "Editing Profile"
+  sign_out: "Sign out"
   ja: "日本語"
   en: "English"
   profile: "Profile"
