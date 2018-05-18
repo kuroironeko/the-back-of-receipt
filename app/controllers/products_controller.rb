@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_group
   before_action :set_product, only: %i[show edit update destroy]
 
   # GET /products
@@ -21,8 +22,9 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = current_user.products.new(product_params)
+    @product.group_id = current_user.group_id 
     if @product.save
-      redirect_to user_product_path(id: @product.id), notice: t(:success_create)
+      redirect_to group_product_path(id: @product.id), notice: t(:success_create)
     else
       render :new 
     end

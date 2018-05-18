@@ -14,9 +14,9 @@
     <% @products_indices.each do |products_index| %>
       <tr>
         <td><%= products_index.name %></td>
-        <td><%= link_to t(:show), products_index %></td>
-        <td><%= link_to t(:edit), edit_products_index_path(products_index) %></td>
-        <td><%= link_to t(:destroy), products_index, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:show), group_products_index_path(id: products_index.id) %></td>
+        <td><%= link_to t(:edit), edit_group_products_index_path(id: products_index.id) %></td>
+        <td><%= link_to t(:destroy), group_products_index_path(id: products_index.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to t(:new), new_products_index_path %>
+<%= link_to t(:new), new_group_products_index_path %>

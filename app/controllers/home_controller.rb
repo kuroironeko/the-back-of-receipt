@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @products_indices = ProductsIndex.all
+    @products_indices = ProductsIndex.where(group_id: current_user.group_id)
     @products = Product.all
   end
 end
