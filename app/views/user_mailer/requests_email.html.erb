@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
+
     <h1>買い物リストが更新されました。</h1>
 
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
+    <table>
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>個数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products_indices.each do |index| %>
           <tr>
-            <th><%= ProductsIndex.human_attribute_name(:name) %></th>
-            <th><%= Product.human_attribute_name(:sum_of_request) %></th>
+            <td><%= index.name %></td>
+            <td><%= Product.sum_of_request(index.id) %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% @products_indices.each do |index| %>
-            <tr>
-              <td><%= index.name %></td>
-              <td><%= Product.sum_of_request(index.id) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </body>
-</html>
+        <% end %>
+      </tbody>
+    </table>   
+
