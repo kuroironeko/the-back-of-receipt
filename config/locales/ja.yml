@@ -21,6 +21,7 @@ ja:
         name: "名前"
       group:
         name: "名前"
+  updated_requests: "買い物リストが更新されました。"
   success_create: "作成に成功しました"
   success_update: "更新に成功しました"
   success_destroy: "削除に成功しました"

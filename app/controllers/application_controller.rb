@@ -2,6 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
+  before_action :set_current_user
 
   def default_url_options(options = {})
     {locale: I18n.locale}.merge options
@@ -13,5 +14,9 @@ class ApplicationController < ActionController::Base
  
   def check_group
     redirect_to(root_url) if !(current_user.group_id == params[:group_id].to_i)
+  end
+  
+  def set_current_user
+    User.current = current_user
   end
 end

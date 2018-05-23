@@ -1,0 +1,8 @@
+買い物リストが更新されました。
+===============================================
+ 
+
+<% @products_indices.each do |index| %>
+  <%= "#{index.name} : #{Product.sum_of_request(index.id)}" %>
+<% end %>
+

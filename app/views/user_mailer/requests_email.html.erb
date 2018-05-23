@@ -1,0 +1,20 @@
+
+    <h1>買い物リストが更新されました。</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>個数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products_indices.each do |index| %>
+          <tr>
+            <td><%= index.name %></td>
+            <td><%= Product.sum_of_request(index.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>   
+

@@ -21,6 +21,7 @@ en:
         name: "Name"
       group:
         name: "Name"
+  updated_requests: "Updated requests list."
   success_create: "Create was successfully created."
   success_update: "Update was successfully created."
   success_destroy: "Destroy was successfully created."
