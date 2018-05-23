@@ -14,6 +14,15 @@ module Panda
     config.i18n.default_locale = :ja
     config.i18n.available_locales = [:ja, :en]
     config.time_zone = 'Tokyo'
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      user_name:            ENV['EMAIL'],
+      password:             ENV['EMAIL_PASS'],
+      authentication:       'plain',
+      enable_starttls_auto: true  
+      }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
