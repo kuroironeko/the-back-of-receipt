@@ -19,7 +19,7 @@
 </dl>
 
 <%= link_to t(:back, :default => t("helpers.links.back")),
-              group_products_path(group_id: @product.group_id), :class => 'btn btn-default'  %>
+              home_index_path(group_id: @product.group_id), :class => 'btn btn-default'  %>
 <%= link_to t(:edit, :default => t("helpers.links.edit")),
               edit_group_product_path(id: @product.id, group_id: @product.group_id), :class => 'btn btn-default' %>
 <%= link_to t(:destroy, :default => t("helpers.links.destroy")),
