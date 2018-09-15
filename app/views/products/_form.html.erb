@@ -1,5 +1,6 @@
 <%= f.input :name, collection: ProductsIndex.where(group_id: current_user.group_id), label_method: :name, value_method: :id, include_blank: false %>
 <%= f.error_span(:name) %>
+<%= link_to t(:new), new_group_products_index_path %>
 <%= f.input :number %>
 <%= f.error_span(:number) %>
 <%= f.input :state %>
@@ -13,5 +14,4 @@
 
 <%= f.button :submit, :class => 'btn-primary' %>
 <%= link_to t(:cancel, :default => t("helpers.links.cancel")),
-              group_products_path(user_id: product.group_id), :class => 'btn btn-default' %>
-
+            home_index_path(user_id: product.group_id), :class => 'btn btn-default' %>  

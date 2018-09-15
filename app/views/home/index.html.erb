@@ -20,4 +20,7 @@
     </tbody>
   </table>
 </div>
+<%= link_to t(:new, :default => t("helpers.links.new")),
+            new_group_product_path(group_id: @user.group_id),
+            :class => 'btn btn-primary' %>
 
