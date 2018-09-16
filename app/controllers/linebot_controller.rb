@@ -41,10 +41,10 @@ class LinebotController < ApplicationController
                             data: message_text,
                             text: '確認します。'
                         }
-                        actions = {
+                        actions = [
                             actions0,
                             actions1
-                        }
+                        ]
                         template = {
                             type: 'confirm',
                             text: "あなたのメールアドレスは#{message_text}ですか？",
