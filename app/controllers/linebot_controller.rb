@@ -63,7 +63,7 @@ class LinebotController < ApplicationController
                     end
                 end
             when Line::Bot::Event::Postback
-                user = User.find_by(email: event.postback.data)
+                user = User.find_by(email: event['postback']['data'])
                 if user == nil
                     message = {
                         type:'text',
