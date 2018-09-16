@@ -32,14 +32,12 @@ class LinebotController < ApplicationController
                         actions0 = {
                             type: 'postback',
                             label: 'はい',
-                            data: message_text,
-                            text: '確認します。'
+                            data: message_text
                         }
                         actions1 = {
                             type: 'postback',
                             label: 'いいえ',
-                            data: message_text,
-                            text: '確認します。'
+                            data: message_text
                         }
                         actions = [
                             actions0,
