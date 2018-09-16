@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
   root to: 'home#index'
   get 'home/index'
-
+  
+  post '/callback' => 'linebot#callback'
 
   devise_for :users, path: 'accounts'
   resources :users do
