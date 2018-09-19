@@ -70,6 +70,12 @@ class LinebotController < ApplicationController
                         text: 'メールアドレスが一致しません。もう一度入力してください。'
                     }
                     client.reply_message(event['replyToken'], message)
+                elsif user.lineid != nil
+                    message = {
+                        type:'text',
+                        text: 'このメールアドレスは、Lineアカウントと既に紐づけられています。'
+                    }
+                    client.reply_message(event['replyToken'], message)
                 else
                     user.lineid = lineid
                     user.save
