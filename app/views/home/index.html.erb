@@ -20,7 +20,15 @@
     </tbody>
   </table>
 </div>
-<%= link_to t(:new, :default => t("helpers.links.new")),
-            new_group_product_path(group_id: @user.group_id),
-            :class => 'btn btn-primary' %>
+<% if @user.group_id != nil %>
+  <%= link_to t(:new, :default => t("helpers.links.new")),
+              new_group_product_path(group_id: @user.group_id),
+              :class => 'btn btn-primary' %>
+<% end %>
+
+<%= link_to t(:share_shopping_list),
+            push_shopping_list_path,
+            :method => :post,
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'btn btn-xs btn-danger' %>
 

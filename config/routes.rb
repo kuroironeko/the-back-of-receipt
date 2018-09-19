@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'home/index'
   
   post '/callback' => 'linebot#callback'
+  post '/push_shopping_list' => 'linebot#push_shopping_list'
 
   devise_for :users, path: 'accounts'
   resources :users do

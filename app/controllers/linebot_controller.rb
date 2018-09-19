@@ -91,4 +91,21 @@ class LinebotController < ApplicationController
         }
         "OK"
     end
+
+    def push_shopping_list
+        products_list = ProductsIndex.where(group_id: current_user.group_id)
+        text = ''
+        products_list.each do |product|
+            text << "#{product.name}: #{Product.sum_of_request(product.id)}\n"
+        end
+        message = {
+            type:'text',
+            text: text
+        }
+        users = User.where(group_id: current_user.group_id)
+        
+        users.each do |user|
+            client.push_message(user.lineid, message) if user.lineid != nil
+        end
+    end
 end
