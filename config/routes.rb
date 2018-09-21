@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   root to: 'home#index'
   get 'home/index'
-  
+
   post '/callback' => 'linebot#callback'
   post '/push_shopping_list' => 'linebot#push_shopping_list'
 

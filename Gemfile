@@ -55,9 +55,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Adds support for testing
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'guard-rspec'
   gem 'rspec-rails'
-  gem 'faker'
   # Use rubocop for code review
   gem 'rubocop', require: false
 end

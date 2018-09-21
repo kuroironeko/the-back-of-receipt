@@ -62,7 +62,7 @@ RSpec.describe ProductsController, type: :controller do
 
   describe 'GET #edit' do
     it 'returns a success response' do
-      get :edit, params: { user_id: product.user_id, id: product.to_param  }, session: valid_session
+      get :edit, params: { user_id: product.user_id, id: product.to_param }, session: valid_session
       expect(response).to be_success
     end
   end

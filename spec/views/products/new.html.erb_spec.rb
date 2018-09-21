@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'products/new', type: :view do
   before(:each) do
-    @product = assign(:product, FactoryBot.create(:product) )
+    @product = assign(:product, FactoryBot.create(:product))
   end
 
   it 'renders new product form' do
