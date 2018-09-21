@@ -22,20 +22,20 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = current_user.products.new(product_params)
-    @product.group_id = current_user.group_id 
+    @product.group_id = current_user.group_id
     if @product.save
       redirect_to group_product_path(id: @product.id), notice: t(:success_create)
     else
-      render :new 
+      render :new
     end
   end
 
   # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
-      redirect_to user_product_path(id: @product.id), notice: t(:success_update) 
+      redirect_to user_product_path(id: @product.id), notice: t(:success_update)
     else
-      render :edit 
+      render :edit
     end
   end
 
@@ -56,5 +56,4 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :number, :user_id, :state, :due_date, :note, :price)
   end
-
 end

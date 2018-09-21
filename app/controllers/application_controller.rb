@@ -5,17 +5,17 @@ class ApplicationController < ActionController::Base
   before_action :set_current_user
 
   def default_url_options(options = {})
-    {locale: I18n.locale}.merge options
+    { locale: I18n.locale }.merge options
   end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
- 
+
   def check_group
-    redirect_to(root_url) if !(current_user.group_id == params[:group_id].to_i)
+    redirect_to(root_url) if current_user.group_id != params[:group_id].to_i
   end
-  
+
   def set_current_user
     User.current = current_user
   end

@@ -10,7 +10,7 @@ RSpec.describe 'products/show', type: :view do
                                   due_date: Date.today,
                                   note: 'pikachu',
                                   price: '10000'
-                                  ) )
+                                ))
   end
 
   it 'renders attributes in <p>' do

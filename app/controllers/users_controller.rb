@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_user, except: [:index, :create, :new, :show, :edit, :update]
-  before_action :check_user, only: [ :show, :edit, :update]
+  before_action :admin_user, except: %i[index create new show edit update]
+  before_action :check_user, only: %i[show edit update]
   before_action :set_user, only: %i[show edit update accept]
   def index
     @users = User.all.where(group_id: current_user.group_id)
@@ -23,33 +23,31 @@ class UsersController < ApplicationController
   def accept
     @user.group_id = current_user.group_id
     @user.admin = false
-    @user.request_group = nil 
+    @user.request_group = nil
     if @user.save
       redirect_to groups_url, notice: t(:success_accept)
     else
       render :index
     end
-
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :email, :password)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 
-    def admin_user
-      redirect_to(root_url) if !(current_user.admin? )
-    end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
-    def check_user
-      redirect_to(root_url) if !(current_user.id == params[:id].to_i )
-    end
-
+  def check_user
+    redirect_to(root_url) if current_user.id != params[:id].to_i
+  end
 end
