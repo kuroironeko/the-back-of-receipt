@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'line-bot-api'
 gem 'simple_form'
 # Dependency of nokogiri for heroku
 gem 'mini_portile2', '~> 2.3.0'
